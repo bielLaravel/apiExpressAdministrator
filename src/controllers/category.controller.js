@@ -1,5 +1,12 @@
 const Category = require('../models/category.model.js');
 
+
+exports.findOne = (req, res) => {
+    Category.findById(req.params.id)
+        .then(user => {
+            res.send(user)
+        })
+}
 // Agafem tot els documents del model
 exports.findAll = (req, res) =>{
     Category.find()
